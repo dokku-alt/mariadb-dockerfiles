@@ -10,6 +10,7 @@ if [[ ! -f /opt/mysql_password ]]; then
 	echo "No mysql password defined"
 	exit 1
 fi
+sleep 2
 mysqld_safe &
 sleep 8
 if [[ ! -f /opt/mysql/initialized ]]; then
@@ -22,4 +23,4 @@ FLUSH PRIVILEGES;
 EOF
     touch /opt/mysql/initialized
 fi
-tailf /var/log/mysql.log
+tailf /var/log/mysql.err
