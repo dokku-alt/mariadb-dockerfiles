@@ -19,3 +19,5 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
 ADD	. /usr/bin
 RUN	chmod +x /usr/bin/start_mariadb.sh
 RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" -e"s/var\/lib/opt/g" /etc/mysql/my.cnf
+
+EXPOSE 3306
