@@ -1,4 +1,4 @@
-FROM	ubuntu:quantal
+FROM	ubuntu:12.04
 MAINTAINER	kload "kload@kload.fr"
 
 RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
