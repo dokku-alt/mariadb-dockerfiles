@@ -3,9 +3,12 @@
 if [[ ! -f /opt/mysql/initialized ]]; then
     mkdir -p /opt/mysql
     cp -a /var/lib/mysql/* /opt/mysql/
-    chown -R mysql:mysql /opt/mysql
     chmod -R 755 /opt/mysql
 fi
+
+# always update permissions in case of user-id being switched
+chown -R mysql:mysql /opt/mysql
+
 if [[ ! -f /opt/mysql_password ]]; then
 	echo "No mysql password defined"
 	exit 1
