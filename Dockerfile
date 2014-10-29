@@ -7,7 +7,7 @@ RUN LC_ALL=C DEBIAN_FRONTEND=noninteractive \
 	apt-get update && \
 	apt-get install -y software-properties-common && \
 	apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db && \
-	add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/ubuntu quantal main' && \
+	add-apt-repository 'deb http://ftp.osuosl.org/pub/mariadb/repo/5.5/ubuntu trusty main' && \
 	apt-get update && \
 	echo mysql-server-5.5 mysql-server/root_password password 'a_stronk_password' | debconf-set-selections && \
 	echo mysql-server-5.5 mysql-server/root_password_again password 'a_stronk_password' | debconf-set-selections && \
